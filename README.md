@@ -241,3 +241,24 @@ async updateLanguage(language) {
     this.loadComponent(language);
 }
 ```
+
+Then, you need to modify *index.marko* in order to include the chunk:
+
+```HTML
+$ const { t } = out.global.i18n;
+<div>
+    <h1 class="title">${t("home")}</h1>
+    <${state.currentComponent}/>
+</div>
+```
+
+Finally, you need to create the "localized" components:
+
+```
+home-en-us
+- index.marko
+home-ru-ru
+- index.marko
+```
+
+And modify the *home-xx-xx/index.marko* accordingly.
