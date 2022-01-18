@@ -1,0 +1,32 @@
+@import "../variables.scss";
+
+.zs-wrap {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.zs-content {
+    flex: 1
+}
+
+.zs-footer {
+    color: $grey-darker;
+    font-size: 80%;
+}
+
+.zs-navbar-wrap {
+    padding-top: 30px;
+}
+
+.icon>svg path {
+    fill: $grey-darker;
+}
+
+@media (max-width: 1023px) {
+
+    .zs-navbar-wrap {
+        padding-top: unset;
+    }
+
+}

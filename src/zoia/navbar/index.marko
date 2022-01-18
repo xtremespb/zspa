@@ -1,0 +1,88 @@
+import navigation from "../../../etc/navigation.json"
+import logo from "../../images/logo.svg"
+import { mdiGithub } from "@mdi/js"
+
+$ const { t, getLanguage, languages } = out.global.i18n;
+<nav class="navbar zs-navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <router-link
+            route=navigation.defaultRoute
+            params=JSON.stringify({
+                language: getLanguage()
+            })
+            class="navbar-item">
+            <img src=logo/>
+        </router-link>
+        <a
+            id="zs_navbar_burger"
+            onClick("onBurgerClick")
+            role="button"
+            class=`navbar-burger${state.navOpen ? " is-active" : ""}`
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbar">
+            <span aria-hidden="true"/>
+            <span aria-hidden="true"/>
+            <span aria-hidden="true"/>
+        </a>
+    </div>
+    <div id="navbar" class=`navbar-menu${state.navOpen ? " is-active" : ""}`>
+        <div class="navbar-start">
+            <for|id| of=navigation.routes>
+                <router-link
+                    route=id
+                    params=JSON.stringify({
+                        language: getLanguage()
+                    })
+                    class=`navbar-item${
+                        state.route === id ? " zs-navbar-item-active" : ""
+                    }`>
+                    ${t(id)}
+                </router-link>
+            </for>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a
+                        class="button is-light"
+                        href="https://github.com/xtremespb/zoia"
+                        target="_blank">
+                        <span class="icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d=mdiGithub/>
+                            </svg>
+                        </span>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+            <div class=`navbar-item has-dropdown${state.langOpen ? " is-active" : ""}`>
+                <a class="navbar-link" on-click("onLanguageClick") id="zs_navbar_language">
+                    Language
+                </a>
+                <div class="navbar-dropdown">
+                    $ {
+                        const currentRouteName = window.router
+                                                ? window.router.getState().name
+                                                : null;
+                    }
+                    <for|lang| of=Object.keys(languages)>
+                        <router-link
+                            route=currentRouteName
+                            params=JSON.stringify({
+                                language: lang
+                            })
+                            class="navbar-item">
+                            ${languages[lang]}
+                        </router-link>
+                    </for>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,14 @@
+[{
+    "name": "home",
+    "path": ":language<([a-z]{2}-[a-z]{2})?>/",
+    "defaultParams": {
+        "language": ""
+    }
+},
+{
+    "name": "license",
+    "path": ":language<([a-z]{2}-[a-z]{2})?>/license",
+    "defaultParams": {
+        "language": ""
+    }
+}]
