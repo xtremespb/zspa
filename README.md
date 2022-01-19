@@ -15,7 +15,7 @@ You may also wish to use ZSPA as a *boilerplate* to build a SPA based on Marko b
 
 ## Demo
 
-Check out the demo website at [zspa.zoiajs.org](https://zspa.zoiajs.org). It's currently not a part of CI/CD process so is not periodically updated.
+Check out the demo website at [zspa.zoiajs.org](https://zspa.zoiajs.org). It's currently not a part of CI/CD process so is not regularly updated.
 
 ## Usage
 
@@ -40,7 +40,7 @@ To build your own website, you will need to change the configuration files accor
 
 ### routes.json
 
-Define your routes here. [Router5](https://router5.js.org/) is used in the background, so you will need to use the corresponding syntax. Each route looks as the following:
+Define your routes here. [Router5](https://router5.js.org/) is used in the background, so you will need to use the corresponding syntax. Each route has the following structure:
 
 ```
 {
@@ -52,11 +52,11 @@ Define your routes here. [Router5](https://router5.js.org/) is used in the backg
 }
 ```
 
-The *:language* part is important in order for internationalization to work as it provides the current locale as a part of an URL.
+The *:language* part is important in order for internationalization to work as it provides the current locale as part of an URL.
 
 ### navigation.json
 
-Define a list of routes which will be displayed at the top of the page as a part of *navbar* component.
+Define a list of routes which will be displayed at the top of the page as part of *navbar* component.
 
 ```
 {
@@ -159,7 +159,7 @@ The *i18n* library exports the following:
 * **getLanguage()**: get an active language ID
 * **loadDefaultLanguage()**: load default language
 * **languages**: returns the contents of *languages.json* configuration file
-* **defaultLanguage**: an ID of the default language
+* **defaultLanguage**: ID of the default language
 
 A minimal *component.js* file may look like this:
 
@@ -229,7 +229,7 @@ onMount() {
 }
 ```
 
-And you will need to call the *loadComponent* method each time an user selects a different locale:
+And you will need to call the *loadComponent* method each time a user selects a different locale:
 
 ```Javascript
 async updateLanguage(language) {
