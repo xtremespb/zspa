@@ -1,5 +1,5 @@
 module.exports = class {
-    onCreate(input, out) {
+    async onCreate(input, out) {
         const state = {
             language: out.global.i18n.getLanguage(),
             route: null,
@@ -7,6 +7,7 @@ module.exports = class {
             navOpen: false,
         };
         this.state = state;
+        await import(/* webpackChunkName: "navbar" */ "./navbar.scss");
     }
 
     onMount() {

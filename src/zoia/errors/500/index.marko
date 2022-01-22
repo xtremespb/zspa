@@ -1,15 +1,13 @@
-import { mdiRobotDead   } from '@mdi/js'
+import { mdiRobotDead } from '@mdi/js'
 
 <div class="zs-500-overlay">
-    <div>
-        <span class="icon zs-500-icon">
-            <svg
-                viewBox="0 0 24 24"
-                width="64"
-                height="64"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d=mdiRobotDead/>
-            </svg>
-        </span>
+    <div
+        class="icon zs-500-icon-wrap"
+        style={
+            opacity: state.iconWrapOpacity
+        }>
+        <svg class="zs-500-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d=mdiRobotDead/>
+        </svg>
     </div>
 </div>

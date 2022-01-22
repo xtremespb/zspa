@@ -34,13 +34,13 @@ module.exports = (env, argv) => ({
             test: /\.(woff(2)?|ttf|eot|otf|png|jpg|svg)(\?v=\d+\.\d+\.\d+)?$/,
             type: "asset/resource",
             generator: {
-                filename: "asset.[hash:8][ext]"
+                filename: "asset.[fullhash][ext]"
             }
         }, {
             test: /\.marko$/,
             loader: "@marko/webpack/loader",
         }, {
-            test: /\.s?css$/,
+            test: /\.(css|scss|sass)$/,
             use: [{
                     loader: argv.mode === "production" ? MiniCssExtractPlugin.loader : "style-loader",
                 }, {
@@ -74,7 +74,7 @@ module.exports = (env, argv) => ({
             template: "index.html",
         }),
         argv.mode === "production" ? new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
+            filename: "[name].[fullhash:8].css",
             experimentalUseImportModule: true,
         }) : () => {},
         argv.mode === "production" ? new CompressionPlugin() : () => {},
@@ -105,7 +105,7 @@ module.exports = (env, argv) => ({
                     from: "./misc/robots.txt"
                 },
             ]
-        })
+        }),
     ],
     node: {
         __dirname: true,
@@ -120,7 +120,7 @@ module.exports = (env, argv) => ({
                     test: /[\\/]node_modules[\\/]/,
                     priority: -10,
                     reuseExistingChunk: true,
-                    filename: "npm.[contenthash:8].js",
+                    filename: "npm.[fullhash:8].js",
                 },
                 style: {
                     name: "style",
@@ -128,7 +128,7 @@ module.exports = (env, argv) => ({
                     chunks: "all",
                     enforce: true,
                     minChunks: 2,
-                    filename: "style.[contenthash:8].js",
+                    filename: "style.[fullhash:8].js",
                 },
                 default: {
                     minChunks: 2,
