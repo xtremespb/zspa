@@ -101,6 +101,9 @@ module.exports = (env, argv) => ({
                 {
                     from: "./favicon/android-chrome-192x192.png"
                 },
+                {
+                    from: "./misc/robots.txt"
+                },
             ]
         })
     ],
