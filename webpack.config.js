@@ -34,7 +34,7 @@ module.exports = (env, argv) => ({
             test: /\.(woff(2)?|ttf|eot|otf|png|jpg|svg)(\?v=\d+\.\d+\.\d+)?$/,
             type: "asset/resource",
             generator: {
-                filename: "asset.[fullhash][ext]"
+                filename: "asset.[contenthash:8][ext]"
             }
         }, {
             test: /\.marko$/,
@@ -79,8 +79,7 @@ module.exports = (env, argv) => ({
         }) : () => {},
         argv.mode === "production" ? new CompressionPlugin() : () => {},
         new CopyWebpackPlugin({
-            patterns: [
-                {
+            patterns: [{
                     from: "./favicon/favicon.ico"
                 },
                 {
