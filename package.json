@@ -1,7 +1,7 @@
 {
-    "name": "ZSPA",
-    "version": "1.0.20",
-    "description": "ZOIA Single Page Appliaction",
+    "name": "zspa",
+    "version": "1.0.21",
+    "description": "ZOIA Single Page Application",
     "main": "index.js",
     "scripts": {
         "build-dev": "webpack --mode development",
