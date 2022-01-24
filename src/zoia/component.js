@@ -13,7 +13,7 @@ module.exports = class {
         };
         this.i18Components = ["navbar", "home", "license", "404"];
         this.componentsLoaded = {};
-        await import(/* webpackChunkName: "bulma" */ "./bulma.scss");
+        await import(/* webpackChunkName: "bulma" */ "../../etc/bulma.scss");
         await import(/* webpackChunkName: "zoia" */ "./zoia.scss");
     }
 

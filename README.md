@@ -131,6 +131,12 @@ switch (route) {
 
 If a route is unknown, the "Not Found" (error/404) component is loaded.
 
+## Configuring Bulma components
+
+In order to reduce the size of CSS bundles, you may wish to configure the Bulma components which are really used in your project.
+
+To do this, you will need to edit the *./etc/bulma.scs* and uncomment the imports you will need. By default, all modules available in Bulma are imported.
+
 ## Creating Pages
 
 The pages are just ordinary Marko components which shall be placed to the *./src/zoia/pages* directory. The directory of each page may contain the following files:
