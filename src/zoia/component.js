@@ -1,4 +1,5 @@
 const pagesLoader = require("../../etc/pages-loader");
+const routes = require("../../etc/routes.json");
 
 module.exports = class {
     async onCreate() {
@@ -11,7 +12,7 @@ module.exports = class {
             currentComponent: null,
             error500: false,
         };
-        this.i18Components = ["navbar", "home", "license", "404"];
+        this.i18Components = ["navbar", "404", ...routes.map(r => r.name)];
         this.componentsLoaded = {};
         await import(/* webpackChunkName: "bulma" */ "../../etc/bulma.scss");
         await import(/* webpackChunkName: "zoia" */ "./zoia.scss");

@@ -1,6 +1,6 @@
 {
     "name": "zspa",
-    "version": "1.0.21",
+    "version": "1.0.22",
     "description": "ZOIA Single Page Application",
     "main": "index.js",
     "scripts": {
